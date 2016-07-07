@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+<body  ng-app="App" ng-controller="main">
+  
+  <div class="container">
+      <h2>AngularJS List / ng-
+        with stagger</h2>
+
+      <form class="form-search">
+
+        <!--INPUT TEXT-->
+        <div class="input-append">
+          <input type="text" ng-model="search"
+                 placeholder="Search user"
+                 class="form-control" >
+        </div>
+
+        <!--LIST-->
+        <ul class="example-animate-container">
+          <li class="animate-repeat" ng-repeat="user in users | filter:search ">
+            <a href="#"> {{user}} </a>
+          </li> 
+       </ul>
+
+    </form>
+  </div>
+  <script src="http://code.angularjs.org/1.2.9/angular.js"></script>
+<script src="http://code.angularjs.org/1.2.9/angular-animate.min.js"></script>
+<script src="app.js">  </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="transcludeExample">
+<div ng-controller="ExampleController">
+<input type="text" ng-model="repetition"  ng-change="change()"  >
+	<div ng-model="REAPEAT" repeat='{{repetition}}'>  ONCH
+	</div>
+</div>
+<script src="js/lib/angular-1.5.3/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
+
+
+

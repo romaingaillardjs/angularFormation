@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+
+<body ng-app="csvApp">
+  <br>
+  <div ng-controller="csvController" class="container" ng-cloack>
+    <h1>Exportar JSON a CSV utilizando Angular JS</h1>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Primer Nombre</th>
+              <th>Segundo Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Fecha Nacimiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat='reg in datos'>
+              <td>{{reg.id}}</td>
+              <td>{{reg.primerNombre}}</td>
+              <td>{{reg.segundoNombre}}</td>
+              <td>{{reg.primerApellido}}</td>
+              <td>{{reg.segundoApellido}}</td>
+              <td>{{reg.fechaNacimiento}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button type="button" class="btn btn-default" ng-csv="datos" filename="Datos.csv" csv-header="['Id', 'Primer Nombre', 'Segundo Nombre', 'Primer Apellido', 'Segundo Apellido', 'Fecha Nacimiento']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Descargar CSV</button>
+    <br>
+    <br>
+    <p>
+      <small>
+      Más información y otros post en <a href="http://wanderlp.com" target="_blank">wanderlp.com</a>
+    </small>
+    </p>
+    <p>
+      <small>
+      <p>Más ejemplos:</p>
+      <ul>
+        <li><a href="//codepen.io/wanderlp/full/rVQEmo/" target="_blank">Tabla con contenido editable</a></li>
+        <li><a href="//codepen.io/wanderlp/full/WvYNKa/" target="_blank">Pagineo con Ángular y Bootstrap</a></li>
+        <li><a href="//codepen.io/wanderlp/full/RPNOLW/" target="_blank">Drag and Drop Angular</a></li>
+      <li><a href="//codepen.io/wanderlp/full/gpxWOa/" target="_blank">Angular Local Storage Demo</a></li>
+      <li><a href="//codepen.io/wanderlp/" target="_blank">Más...</a></li>
+      </ul>
+     </small>
+    </p>
+  </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    
+<script src="app.js">  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<div ng-show="loading">chargement...</div>
+<div ng-repeat="post in posts">
+	<h1>mon nom {{post.name}}</h1>
+
+	<h1>mon nom {{post.content}}</h1>
+		
+	<a href="#/comments/{{post.id}}">voir les commentaires</a> <hr/>
+
+	<h2>{{post.friends.length}} amis</h2>
+
+</div>

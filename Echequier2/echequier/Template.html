@@ -1,0 +1,11 @@
+<button class="btn btn-danger" type="button" ng-click="changer(0)"> - </button>
+<button class="btn btn-success" type="button" ng-click="changer(1)"> + </button>
+	<input type="color"  ng-model="pair" ng-change="changer(3)"/>
+	<input type="color"  ng-model="impair" ng-change="changer(3)"/>
+		<div class="container" style="width: 50vw;">
+			<div ng-repeat="X in ligne" >
+				<div ng-repeat="x in X">	
+					<div  style="min-height:{{x.taille}};width:{{x.taille}};background-color:{{x.couleur}};"></div>
+				</div>
+			</div>
+		</div>

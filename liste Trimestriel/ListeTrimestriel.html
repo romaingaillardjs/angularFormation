@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+	<title></title>
+</head>
+<body ng-app="monModule">
+<h1>Afficher une liste trimestrielle</h1>
+<div ng-controller="ListeTrimestriel">
+<label> hit your date here: (yyyy-mm-jj)
+	<input type="date" ng-hide="!valid" ng-model="maDate" class="animate-if">
+</label>
+<button ng-init="valid=true" ng-click='nouvelledate(maDate)' >Valider	</button>
+
+<select  id="" ng-model="select">
+	<option ng-repeat="X in LesTrimestressur10ans" value="{{X}}">{{X}}</option>
+
+</select>
+
+</div>
+<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type=text/javascript src="app.js"></script>
+
+</body>
+</html>
+
+

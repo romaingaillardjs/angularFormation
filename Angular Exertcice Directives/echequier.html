@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> </head>
+<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.css">
+
+<body>
+    <div ng-app="app">
+        <div ng-controller="SomeController">
+            <accordion>
+                <expander class="expander" expander-title="expander.title" ng-repeat="expander in expanders"> {{expander.text}} </expander>
+            </accordion>
+        </div>
+    </div>
+    <script type="javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"></script>
+    <script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type=text/javascript src="app.js"></script>
+</body>
+
+</html>
+
+

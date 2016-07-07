@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title></title>
+</head>
+<body ng-app="monModule">
+<div ng-view></div>
+
+	<input type="text" ng-model="number1"/>
+	<input type="text" ng-model="number2"/>
+			{{"somme :" + (number1 *1 + number2 *1) }}
+<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type=text/javascript src="https://code.angularjs.org/1.4.5/angular-route.min.js"></script>
+<script type=text/javascript src="app.js"></script>
+<script type=text/javascript src="Services/post.js"></script>
+<script type=text/javascript src="Controller/posts.js"></script>
+<script type=text/javascript src="Controller/comments.js"></script>
+
+</body>
+</html>

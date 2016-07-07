@@ -1,0 +1,13 @@
+
+	
+
+	<input type="text" value="valeur" ng-model="saisieNbCase"  ng-transclude>
+	<button ng-click="changer(valeur)">	</button>
+
+		<div class="container">
+			<div ng-repeat="X in Echequier.ligne" >
+				<div ng-repeat="x in X">	
+					<div  class="main2" style="background-color:{{x.couleur}};"></div>
+				</div>
+			</div>
+		</div>

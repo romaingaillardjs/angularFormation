@@ -1,0 +1,32 @@
+	<div ng-controller="CommentsCtrl"> 
+<input type="text" ng-model="query"/>
+<select  id="" ng-model="select">
+	<option value="title">organiser par nom</option>
+	<option value="comments">organiser par contenu</option>
+	<option value="-comments">organiser par contenu decroissant</option>
+
+</select>
+
+			<h1>{{title}}</h1>
+			
+				<h1>{{comments}}</h1>
+		
+			<p><a href="#/">revenir aux article</a></p>
+		
+		<div ng-repeat="comment in comments | filter:query | orderBy:select">
+
+				<p>	<strong>{{comment.username}}	</strong></br>{{comment.content}}</p>
+			</div>
+
+		<!-- <form ng-submit="addcomments()">
+			<input type="text" placeholder="username" ng-model=newComment.username/>
+			<input type="text" placeholder="city" ng-model=newComment.city/>
+			<input type="text" placeholder="email" ng-model=newComment.email/>
+				<textarea ng-model="newComment.content"></textarea>
+			<div>
+			<p ng-model=>	
+			</p>	
+			</div>
+		<input type="submit" value="Envoyer">
+		</form> -->
+	</div>

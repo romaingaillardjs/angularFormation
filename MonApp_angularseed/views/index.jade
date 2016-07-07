@@ -1,0 +1,25 @@
+extends layout
+
+block body
+  div(ng-controller='AppCtrl')
+    h2 Hello {{name}}
+    ul.menu
+      li
+        a(href='view1') view1
+      li
+        a(href='view2') view2
+      li
+        a(href='view3') view3
+
+    div(ng-view)
+
+    div
+      | Angular seed app: v
+      span(app-version)
+
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js")
+  script(src='../js/app.js')
+  script(src='../js/services.js')
+  script(src='../js/controllers.js')
+  script(src='../js/filters.js')
+  script(src='../js/directives.js')

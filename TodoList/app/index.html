@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>myTodoList</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body ng-app='maTodoList'>
+	<div class='container'>
+		<div class='row' style="text-align:center">
+			<div class="col-lg-12">
+				<div ng-controller='myTodoListCtrl'>
+					<p>hello</p>
+					<form ng-submit="addTask()">
+						<p><input type="text" ng-model="userInput"></p>
+						<p><input  class="btn btn-success" type="submit" value="Enregistrer"></p>
+  					</form>
+  							<div class="panel panel-default col-xs-12 ">
+  							<h4>My To Do List</h4>
+  								<div class="panel-body col-xs-12 ">
+      								<ul ng-repeat="Task in TaskList">
+	      							 	<li ng-if="Task.afficher==true" class="list-group-item col-xs-12">
+		      								<input type="checkbox" class="myCheckbox col-xs-12 col-sm-4" ng-model="Task.checked"/>
+		      								<span class="col-xs-12 col-sm-4 ">{{ Task.name }}</span>
+		      								<button  type="button" class="btn btn-warning col-xs-12 col-sm-4" ng-click="deleteTask(Task)">delete</button>
+	      								</li>
+      								</ul>
+  								</div>
+  							</div>
+  							<button type="button" class="btn btn-primary" ng-click="checkedAllTask()">checked all Task</button>
+							<button type="button" class="btn btn-danger" ng-click="deleteAllCheckedTask()">delete All Checked Task</button>
+							<button type="button" class="btn btn-warning" ng-click="afficherLesTachesActives()">afficher Les Taches Actives</button>
+							<button type="button" class="btn btn-warning" ng-click="afficherLesTachesclosed()">afficher Les Taches terminées</button>
+      				</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="scripts/controllers/myTodoListCtrl.js"></script>
+</body>
+</html>

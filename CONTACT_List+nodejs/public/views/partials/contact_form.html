@@ -1,0 +1,42 @@
+<div ng-controller="addContactCtrl">
+    <div class="list-group-item">
+        <div name="userForm" class="form-group">
+            <form name="myForm">
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"> <label for="name">name: </label><input name="myName" id="name" class="form-control" type="text" ng-model="currentContact.name" required/>
+                    <div ng-messages="myForm.myName.$error" style="color:red" role="alert">
+                        <div ng-message="required" role="alert">You did not enter a field</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"> <label>Name</label> <input type="text" name="name" class="form-control" ng-model="user.name" required>
+                    <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+                </div> <label for="email">email:</label> <input type="email" name="myField" required id="email" class="form-control" type="text" ng-model="currentContact.email">
+                <div ng-messages="myForm.myField.$error" role="alert" style="color:red" role="alert">
+                    <div ng-message="email" role="alert">This field must be a valid email address.</div>
+                </div> <label for="phone">phone:</label> <input ng-minlength="10" ng-maxlength="10" name="myPhone" id="phone" class="form-control" ng-model="currentContact.phone" ng-pattern="regex">
+                <div ng-messages="myForm.myPhone.$error" style="color:red" role="alert">
+                    <div ng-message-exp="['minlength', 'maxlength','pattern']">This field must be a valid phone number.</div>
+                </div>
+                <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"> <label for="url">url:</label> <input id="url" name="myUrl" class="form-control" type="URL" ng-model="currentContact.url">
+                    <div ng-messages="myForm.$error.url" style="color:red" role="alert">
+                        <div ng-message="required" role="alert">You did not enter a field </div>
+                    </div>
+                </div> <label for="notes">notes:</label> <textarea class="form-control" id="notes" rows="3" ng-model="currentContact.notes"></textarea> </form>
+        </div>
+        <a ng-if="path === '/add' " ng-href="#/contact-info/{{ contacts.length - 1 }}" ng-click="addContact()"> <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Add</span>
+            </button> </a>
+        <a ng-if="path !== '/add'" ng-href="#/contact-info/{{index}}"> <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Save Edits</span>
+            </button> </a>
+        <a ng-if="path === '/add'" ng-href="#/contact-info/{{index}}" ng-click="ajouterMessage()"> <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> DataBase Record</span>
+            </button> </a>
+        <a href="#/"> <button class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span><span>  Cancel</span>
+            </button> </a>
+    </div>
+</div>
